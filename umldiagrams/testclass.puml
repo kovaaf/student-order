@@ -1,0 +1,138 @@
+@startuml
+'https://plantuml.com/class-diagram
+!theme reddress-darkblue
+abstract class AbstractList
+abstract AbstractCollection
+interface List
+interface Collection
+
+List <|-- AbstractList
+Collection <|-- AbstractCollection
+
+Collection <|- List
+AbstractCollection <|- AbstractList
+AbstractList <|-- ArrayList
+
+class ArrayList {
+Object[] elementData
+size()
+}
+
+enum TimeUnit {
+DAYS
+HOURS
+MINUTES
+}
+
+@enduml
+
+/**
+Наследование <|--
+Композиция *--
+Агрегация o--
+Зависимость <..
+Ассоциация <--
+Реализация (Имплементация) <|..
+
+-- - рисует сплошную линию
+.. - рисует штриховую линию
+
+< - рисует заостренный наконечник стрелочки
+<| или ^ - рисует наконечник стрелочки в виде треугольника
+* - рисует неконечник стрелочки в виде сплошного ромба
+o - рисует неконечник стрелочки в виде полого ромба
+# - рисует неконечник стрелочки в виде полого квадратика
+x - рисует неконечник стрелочки в виде крестика
+} - рисует неконечник стрелочки в виде обратного треугольника
++ - рисует неконечник стрелочки в виде кружочка с крестиком внутри
+
+Для объявления полей и методов вы можете использовать символ :.
+Для этого каждый раз указываете класс, затем символ :и затем имя поля или метода,
+который Вы хотите добавить в этот класс.
+Object : equals()
+ArrayList : Object[] elementData
+ArrayList : size()
+
+Чтобы не указывать каждый раз имя класса, для которого Вы хотите добавить поле данных или метод,
+можно все такие поля и методы указать сразу перечислив их внутри фигурных скобок {}.
+Синтаксис порядка описания типа/имени довольно гибок.
+class Dummy {
+  String data
+  void methods()
+}
+class Flight {
+   flightNumber : Integer
+   departureTime : Date
+}
+
+Определяя методы и поля данных, вы можете использовать символы указания видимости,
+приведённые в ниже:
++ - public
+~ - package private
+# - protected
+- - private
+
+Вы можете определить статические или абстрактные методы и поля данных используя модификаторы
+{static} и {abstract} соответственно.
+
+Вы можете определить класс как абстрактный, используя ключевые слова abstract или abstract class.
+Такие классы будут нарисованы курсивом.
+А еще Вы можете использовать ключевые слова interface, annotation и enum.
+
+Доступны различные стили для пакетов.
+package foo1 <<Node>> {
+  class Class1
+}
+package foo2 <<Rectangle>> {
+  class Class2
+}
+package foo3 <<Folder>> {
+  class Class3
+}
+package foo4 <<Frame>> {
+  class Class4
+}
+package foo5 <<Cloud>> {
+  class Class5
+}
+package foo6 <<Database>> {
+  class Class6
+}
+
+Вы можете использовать ключевые слова extends и implements для содания связей наследования
+и реализации (имплементации).
+class ArrayList implements List
+class ArrayList extends AbstractList
+
+Связи от/на члены класса
+class User {
+  id : INTEGER
+  ..
+  other_id : INTEGER
+}
+class Email {
+  id : INTEGER
+  ..
+  user_id : INTEGER
+  address : INTEGER
+}
+User::id *-- Email::user_id
+
+Заметки
+Object <|--- ArrayList
+note top of Object : In java, every class\nextends this one.
+note "Это не привязанная\nни к чему заметка" as N1
+note "Эта заметка привязана\nсразу к нескольким классам" as N2
+Object .. N2
+N2 .. ArrayList
+class Foo
+note left: Эта заметка будет\nпривязана к последнему\nопределенному классу
+
+Объявление темы
+// startuml
+!theme spacelab
+class Example {
+  Theme spacelab
+}
+// enduml
+*/

@@ -1,0 +1,15 @@
+1. PostgresQL
+2. JUnit
+3. Maven
+4. log4j
+5. Git
+6. Multithreading
+7. tomcat
+8. ReST
+9. Hibernate
+10. Spring Framework
+11. Spring Data
+12. Jersey
+13. JSP
+14. Spring MVC
+15. Spring Rest Service
